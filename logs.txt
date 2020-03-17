@@ -1,0 +1,7 @@
+22:20:25,947 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0001: Content added at location C:\Users\Seph\Desktop\wildfly-19.0.0.Beta3\standalone\data\content\45\93ba3f49aed6a93cda93a0acec62fe0938e7a2\content
+22:20:25,950 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 82) WFLYUT0022: Unregistered web context: '/ee1' from server 'default-server'
+22:20:25,960 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment ee1.war (runtime-name: ee1.war) in 11ms
+22:20:25,962 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "ee1.war" (runtime-name: "ee1.war")
+22:20:26,114 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 84) WFLYUT0021: Registered web context: '/ee1' for server 'default-server'
+22:20:26,144 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0016: Replaced deployment "ee1.war" with deployment "ee1.war"
+22:20:26,147 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0002: Content removed from location C:\Users\Seph\Desktop\wildfly-19.0.0.Beta3\standalone\data\content\c6\0b8a1e8fe47e26b700aaf69db1dcdbf1de0499\content
