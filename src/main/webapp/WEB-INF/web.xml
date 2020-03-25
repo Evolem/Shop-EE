@@ -19,7 +19,7 @@
 <!--Сервлет для обработки исключений-->
   <servlet>
     <servlet-name>PageNotFoundServlet</servlet-name>
-    <servlet-class>ru.ee.homework.exeptionServlet.PageNotFoundServlet</servlet-class>
+    <servlet-class>ru.ee.homework.servlets.ErrorServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
