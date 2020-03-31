@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ee1" />
+        <module name="GeekBrains-EE" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ee1" target="1.8" />
+      <module name="GeekBrains-EE" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

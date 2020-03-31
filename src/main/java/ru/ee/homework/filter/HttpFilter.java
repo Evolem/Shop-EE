@@ -17,11 +17,12 @@ public class HttpFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        servletResponse.setContentType("text/html;charset=UTF-8");
-        servletResponse.getWriter().println("<html><h3>HEADER</h3>"); //временные костыли ...
-        filterConfig.getServletContext().getRequestDispatcher("/WEB-INF/menu.jsp").include(servletRequest,servletResponse);
+        servletResponse.setCharacterEncoding("UTF-8");
+        servletResponse.setContentType("text/html");
+        filterConfig.getServletContext().getRequestDispatcher("/templates/header.jsp").include(servletRequest,servletResponse);
         filterChain.doFilter(servletRequest, servletResponse);
-        servletResponse.getWriter().println("<h3>FOOTER</h3></html>");
+        filterConfig.getServletContext().getRequestDispatcher("/templates/footer.jsp").include(servletRequest,servletResponse);
+
     }
 
     @Override

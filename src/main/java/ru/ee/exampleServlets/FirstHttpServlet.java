@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 //привязка через аннотацию
-@WebServlet(name = "FirstHttpServlet", urlPatterns = "hservlet/*")
+@WebServlet(name = "FirstHttpServlet", urlPatterns = "/hservlet/*")
 public class FirstHttpServlet extends HttpServlet {
     private Logger logger = LoggerFactory.getLogger(FirstServlet.class);
 

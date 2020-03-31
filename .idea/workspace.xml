@@ -2,42 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e279861f-c076-46bb-b15b-c10969f8089f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/exampleServlets/FirstHttpServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/exampleServlets/FirstServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/filter/HttpFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/CartServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/CatalogServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/ErrorServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/MainServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/OrderServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/ProductServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/exampleServlets/FirstHttpServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/exampleServlets/FirstServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/filter/HttpFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/CartServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/CatalogServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/ErrorServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/MainServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/OrderServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/ProductServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/menu.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/private.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ee1/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ee/homework/entities/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ee/homework/repositories/ProductRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/about.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/catalog.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GeekBrains-EE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GeekBrains-EE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ee/exampleServlets/FirstHttpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ee/exampleServlets/FirstHttpServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ee/homework/filter/HttpFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ee/homework/filter/HttpFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/CatalogServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/CatalogServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/MainServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ee/homework/servlets/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templates/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/ee/exampleServlets/FirstHttpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ee/exampleServlets/FirstHttpServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/ee/homework/filter/HttpFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/filter/HttpFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/CartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/CartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/CatalogServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/CatalogServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/MainServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ee/homework/servlets/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/exampleServlets/FirstHttpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/exampleServlets/FirstHttpServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/filter/HttpFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/filter/HttpFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/CartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/CartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/CatalogServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/CatalogServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/MainServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1/WEB-INF/classes/ru/ee/homework/servlets/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/WEB-INF/menu.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ee1/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ee1/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="jsf" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/templates/catalog.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -50,6 +73,11 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -61,6 +89,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Seph\OneDrive\Java projects\GeekBrains-EE\src\main\webapp\templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="ee1 [clean,install,wildfly:deploy]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
@@ -105,6 +138,7 @@
       <workItem from="1584472420449" duration="1340000" />
       <workItem from="1584536331351" duration="1205000" />
       <workItem from="1584625396836" duration="700000" />
+      <workItem from="1585676245695" duration="14268000" />
     </task>
     <servers />
   </component>
@@ -113,6 +147,44 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1186" y="152" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585676212701">
+      <screen x="-1280" y="0" width="1280" height="994" />
+    </state>
+    <state x="-1186" y="152" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1280.0.1280.994/0.0.1920.1050@-1280.0.1280.994" timestamp="1585676212701" />
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1585681593717">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/-1280.0.1280.994/0.0.1920.1050@0.0.1920.1050" timestamp="1585681593717" />
+    <state x="-1046" y="91" key="CommitChangelistDialog2" timestamp="1585677318693">
+      <screen x="-1280" y="0" width="1280" height="994" />
+    </state>
+    <state x="-1046" y="91" key="CommitChangelistDialog2/-1280.0.1280.994/0.0.1920.1050@-1280.0.1280.994" timestamp="1585677318693" />
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1585690346537">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.bottom/-1280.0.1280.994/0.0.1920.1050@-1280.0.1280.994" timestamp="1585679535126" />
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom/-1280.0.1280.994/0.0.1920.1050@0.0.1920.1050" timestamp="1585690346537" />
+    <state width="1877" height="266" key="GridCell.Tab.0.center" timestamp="1585690346536">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.center/-1280.0.1280.994/0.0.1920.1050@-1280.0.1280.994" timestamp="1585679535126" />
+    <state width="1877" height="266" key="GridCell.Tab.0.center/-1280.0.1280.994/0.0.1920.1050@0.0.1920.1050" timestamp="1585690346536" />
+    <state width="1877" height="266" key="GridCell.Tab.0.left" timestamp="1585690346536">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.left/-1280.0.1280.994/0.0.1920.1050@-1280.0.1280.994" timestamp="1585679535126" />
+    <state width="1877" height="266" key="GridCell.Tab.0.left/-1280.0.1280.994/0.0.1920.1050@0.0.1920.1050" timestamp="1585690346536" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right" timestamp="1585690346536">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.right/-1280.0.1280.994/0.0.1920.1050@-1280.0.1280.994" timestamp="1585679535126" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right/-1280.0.1280.994/0.0.1920.1050@0.0.1920.1050" timestamp="1585690346536" />
+    <state x="-944" y="321" key="com.intellij.ide.util.TipDialog" timestamp="1585676247631">
+      <screen x="-1280" y="0" width="1280" height="994" />
+    </state>
+    <state x="-944" y="321" key="com.intellij.ide.util.TipDialog/-1280.0.1280.994/0.0.1920.1050@-1280.0.1280.994" timestamp="1585676247631" />
   </component>
   <component name="masterDetails">
     <states>
