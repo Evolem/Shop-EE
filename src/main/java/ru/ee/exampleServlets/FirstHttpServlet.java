@@ -19,8 +19,8 @@ public class FirstHttpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println("<h1>Http Servlet Page</h1>");
-        resp.getWriter().println("<p> Context path: " + req.getContextPath() + "</p>"); //имя приложения (контекст)
-        resp.getWriter().println("<p> Servlet path: " + req.getServletPath()+ "</p>"); // url адресс страницы
+        resp.getWriter().println("<p> getContextPath(): " + req.getContextPath() + "</p>"); //имя приложения (контекст)
+        resp.getWriter().println("<p> getServletPath(): " + req.getServletPath()+ "</p>"); // url адресс страницы
         resp.getWriter().println("<p> Info path: " + req.getPathInfo()+ "</p>"); // значение после ../hservlet/***/
         resp.getWriter().println("<p> Query String: " + req.getQueryString()+ "</p>"); // получение параметров через ?param=***&param=*** ...
 
