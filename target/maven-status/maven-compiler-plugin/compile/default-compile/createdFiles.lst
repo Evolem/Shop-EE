@@ -1,6 +1,0 @@
-ru\geekbrains\ProductController.class
-ru\geekbrains\filter\HeaderFooterFilter.class
-ru\geekbrains\ProductServlet.class
-ru\geekbrains\persist\DataSource.class
-ru\geekbrains\persist\Product.class
-ru\geekbrains\persist\ProductRepository.class
