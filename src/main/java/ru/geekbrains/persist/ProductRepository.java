@@ -1,16 +1,34 @@
 package ru.geekbrains.persist;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
+@Named
 public class ProductRepository {
 
-    private final Connection conn;
+    private Connection conn;
 
-    public ProductRepository(Connection conn) throws SQLException {
-        this.conn = conn;
+    @Inject
+    private DataSource dataSource;
+
+    @PostConstruct
+    public void init() throws SQLException {
+        this.conn = dataSource.getConnection();
         createTableIfNotExists(conn);
+
+        if (findAll().size() == 0) {
+            insert(new Product(-1L, "Product1", "Desc1", new BigDecimal(10)));
+            insert(new Product(-1L, "Product2", "Desc2", new BigDecimal(102)));
+            insert(new Product(-1L, "Product3", "Desc3", new BigDecimal(1030)));
+            insert(new Product(-1L, "Product4", "Desc4", new BigDecimal(140)));
+        }
     }
 
     public void insert(Product product) throws SQLException {

@@ -8,7 +8,7 @@
 
     <context-param>
         <param-name>jdbcConnectionString</param-name>
-        <param-value>jdbc:mysql://localhost:3306/shop_ee?createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</param-value>
+        <param-value>jdbc:mysql://localhost:3306/javaee_test_db?createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</param-value>
     </context-param>
 
     <context-param>
@@ -18,17 +18,18 @@
 
     <context-param>
         <param-name>dbPassword</param-name>
-        <param-value>se1234</param-value>
+        <param-value>root</param-value>
     </context-param>
 
     <servlet>
-        <servlet-name>HelloWorldServlet</servlet-name>
-        <servlet-class>ru.geekbrains.HelloWorldServlet</servlet-class>
+        <servlet-name>faces-servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HelloWorldServlet</servlet-name>
-        <url-pattern>/helloworld</url-pattern>
+        <servlet-name>faces-servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 
     <error-page>

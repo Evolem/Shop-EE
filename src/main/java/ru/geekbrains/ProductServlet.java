@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 
-@WebServlet(name = "ProductServlet", urlPatterns = {"/", ""})
+//@WebServlet(name = "ProductServlet", urlPatterns = {"/", ""})
 public class ProductServlet extends HttpServlet {
 
     private Logger logger = LoggerFactory.getLogger(ProductServlet.class);
@@ -35,7 +35,7 @@ public class ProductServlet extends HttpServlet {
         try {
             if (req.getServletPath().equals("/")) {
                 req.setAttribute("products", productRepository.findAll());
-                getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+                getServletContext().getRequestDispatcher("/index.xhtml").forward(req, resp);
             } else if (req.getServletPath().equals("/create")) {
                 showCreateProductPage(req, resp);
             } else if (req.getServletPath().equals("/edit")) {
@@ -128,12 +128,12 @@ public class ProductServlet extends HttpServlet {
         }
         req.setAttribute("product", product);
         req.setAttribute("action", "update");
-        getServletContext().getRequestDispatcher("/product.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/product.xhtml").forward(req, resp);
     }
 
     private void showCreateProductPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("product", new Product());
         req.setAttribute("action", "create");
-        getServletContext().getRequestDispatcher("/product.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/product.xhtml").forward(req, resp);
     }
 }
