@@ -9,8 +9,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-@ApplicationScoped
-@Named
+@ApplicationScoped //скоуп в атрибутах приложения
+@Named //для создания бина
 public class DataSource {
 
     @Inject
@@ -18,7 +18,7 @@ public class DataSource {
 
     private Connection connection;
 
-    @PostConstruct
+    @PostConstruct //после создания бина
     public void init() throws SQLException {
         String jdbcConnectionString = ctx.getInitParameter("jdbcConnectionString");
         String dbUsername = ctx.getInitParameter("dbUsername");
