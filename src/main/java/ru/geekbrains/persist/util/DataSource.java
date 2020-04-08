@@ -1,4 +1,4 @@
-package ru.geekbrains.persist;
+package ru.geekbrains.persist.util;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;

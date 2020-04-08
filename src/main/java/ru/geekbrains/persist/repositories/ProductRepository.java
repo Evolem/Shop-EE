@@ -1,4 +1,7 @@
-package ru.geekbrains.persist;
+package ru.geekbrains.persist.repositories;
+
+import ru.geekbrains.persist.util.DataSource;
+import ru.geekbrains.persist.Product;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
