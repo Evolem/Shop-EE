@@ -1,6 +1,6 @@
 package ru.geekbrains.controllers;
 
-import ru.geekbrains.persist.Product;
+import ru.geekbrains.persist.entities.Product;
 import ru.geekbrains.persist.repositories.ProductRepository;
 
 import javax.enterprise.context.SessionScoped;

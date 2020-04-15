@@ -1,4 +1,4 @@
-package ru.geekbrains.persist;
+package ru.geekbrains.persist.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -20,6 +20,9 @@ public class Product {
     @Column
     private BigDecimal price;
 
+    @ManyToOne
+    private Category category;
+
     public Product() {
     }
 
@@ -29,6 +32,13 @@ public class Product {
         this.description = description;
         this.price = price;
     }
+
+//    public Product(ProductPojo productPojo){
+//        this.name = productPojo.getName();
+//        this.category = productPojo.getCategoryPojo().getCategory();
+//        this.description = productPojo.getDescription();
+//        this.price = productPojo.getPrice();
+//    }
 
     public Long getId() {
         return id;
@@ -60,5 +70,13 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

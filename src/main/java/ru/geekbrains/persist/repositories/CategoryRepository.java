@@ -1,65 +1,42 @@
 package ru.geekbrains.persist.repositories;
 
-import ru.geekbrains.persist.Category;
-import ru.geekbrains.persist.util.DataSource;
+import ru.geekbrains.persist.entities.Category;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
-import java.sql.*;
-import java.util.ArrayList;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
 @Named
 public class CategoryRepository {
 
-    private Connection conn;
+    @PersistenceContext(unitName = "ds")
+    EntityManager em;
 
-    @Inject
-    DataSource dataSource;
-
-    @PostConstruct
-    public void init(){
-        conn = dataSource.getConnection();
+    public List<Category> findAll() {
+        return em.createQuery("from Category ", Category.class).getResultList();
     }
 
-    public List<Category> getAllCategory() throws SQLException {
-        List<Category> categories = new ArrayList<>();
-        try(Statement stmt = conn.createStatement()){
-            ResultSet rs = stmt.executeQuery("select * from categories");
-
-            while (rs.next()){
-                categories.add(new Category(rs.getInt(1), rs.getString(2)));
-            }
-        }
-        return categories;
+    @Transactional
+    public void insert(Category category) {
+        em.persist(category);
     }
 
-    public void insert(Category category) throws SQLException {
-        try (PreparedStatement stmt = conn.prepareStatement(
-                "insert into categories(`name`) values (?);")) {
-            stmt.setString(1, category.getName());
-            stmt.execute();
-        }
+    @Transactional
+    public void delete(Integer id) {
+        Category category = em.find(Category.class, id);
+        em.remove(category);
     }
 
-    public void update(Category category) throws SQLException {
-        try (PreparedStatement stmt = conn.prepareStatement(
-                "update categories set `name` = ? where `id` = ?;")) {
-            stmt.setString(1, category.getName());
-            stmt.setLong(2, category.getId());
-            stmt.execute();
-        }
+    @Transactional
+    public void update(Category category) {
+        em.merge(category);
     }
 
-    public void delete(long id) throws SQLException {
-        try (PreparedStatement stmt = conn.prepareStatement(
-                "delete from categories where id = ?;")) {
-            stmt.setLong(1, id);
-            stmt.execute();
-        }
+    public Category findCategoryById(int category_id) {
+        return em.find(Category.class, category_id);
     }
-
 }

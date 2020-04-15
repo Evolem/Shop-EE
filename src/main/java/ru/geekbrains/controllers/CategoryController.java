@@ -1,6 +1,6 @@
 package ru.geekbrains.controllers;
 
-import ru.geekbrains.persist.Category;
+import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.persist.repositories.CategoryRepository;
 
 import javax.enterprise.context.SessionScoped;
@@ -27,7 +27,7 @@ public class CategoryController implements Serializable {
     }
 
     public List<Category> getAllCategory() throws SQLException {
-        return categoryRepository.getAllCategory();
+        return categoryRepository.findAll();
     }
 
     public String create(){

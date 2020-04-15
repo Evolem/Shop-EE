@@ -1,4 +1,4 @@
-package ru.geekbrains.persist;
+package ru.geekbrains.persist.entities;
 
 import java.math.BigDecimal;
 import java.util.List;
