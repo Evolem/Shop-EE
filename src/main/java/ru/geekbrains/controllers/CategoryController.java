@@ -3,6 +3,7 @@ package ru.geekbrains.controllers;
 import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.persist.repositories.CategoryRepository;
 import ru.geekbrains.services.CategoryService;
+import ru.geekbrains.services.pojo.CategoryPojo;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -17,6 +18,8 @@ public class CategoryController implements Serializable {
 
     @Inject
     private CategoryService categoryService;
+
+    private CategoryPojo categoryPojo;
     private Category category;
 
     public Category getCategory() {
@@ -27,7 +30,7 @@ public class CategoryController implements Serializable {
         this.category = category;
     }
 
-    public List<Category> getAllCategory() throws SQLException {
+    public List<Category> getAllCategory() {
         return categoryService.findAll();
     }
 
