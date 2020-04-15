@@ -16,10 +16,10 @@ import java.util.List;
 public class ProductController implements Serializable {
 
     @Inject
-    private ProductRepository productRepository;
+    private ProductRepository productService;
 
     @Inject
-    CategoryRepository categoryRepository;
+    private CategoryRepository categoryService;
 
     private Product product;
     private Integer category_id;
@@ -42,33 +42,36 @@ public class ProductController implements Serializable {
 
     public String createProduct() {
         this.product = new Product();
+        if (category_id != null) {
+            this.product.setCategory(categoryService.findCategoryById(category_id));
+        }
         return "/product.xhtml?faces-redirect=true";
     }
 
     public List<Product> getAllProduct() throws SQLException {
-        return productRepository.findAll();
+        return productService.findAll();
     }
 
     public String editProduct(Product product) {
         this.product = product;
 
         if (category_id != null) {
-            this.product.setCategory(categoryRepository.findCategoryById(category_id));
+            this.product.setCategory(categoryService.findCategoryById(category_id));
         }
 
         return "/product.xhtml?faces-redirect=true";
     }
 
     public void deleteProduct(Product product) throws SQLException {
-        productRepository.delete(product.getId());
+        productService.delete(product.getId());
         //return "/index.xhtml?faces-redirect=true";
     }
 
     public String saveProduct() throws SQLException {
         if (product.getId() == null) {
-            productRepository.insert(product);
+            productService.insert(product);
         } else {
-            productRepository.update(product);
+            productService.update(product);
         }
         return "/index.xhtml?faces-redirect=true";
     }
