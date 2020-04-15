@@ -28,6 +28,14 @@ public class ProductController implements Serializable {
         return product;
     }
 
+    public Integer getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(Integer category_id) {
+        this.category_id = category_id;
+    }
+
     public void setProduct(Product product) {
         this.product = product;
     }
