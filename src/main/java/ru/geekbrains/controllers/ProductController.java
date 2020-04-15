@@ -1,6 +1,7 @@
 package ru.geekbrains.controllers;
 
 import ru.geekbrains.persist.entities.Product;
+import ru.geekbrains.persist.repositories.CategoryRepository;
 import ru.geekbrains.persist.repositories.ProductRepository;
 
 import javax.enterprise.context.SessionScoped;
@@ -17,7 +18,11 @@ public class ProductController implements Serializable {
     @Inject
     private ProductRepository productRepository;
 
+    @Inject
+    CategoryRepository categoryRepository;
+
     private Product product;
+    private Integer category_id;
 
     public Product getProduct() {
         return product;
@@ -38,6 +43,11 @@ public class ProductController implements Serializable {
 
     public String editProduct(Product product) {
         this.product = product;
+
+        if (category_id != null) {
+            this.product.setCategory(categoryRepository.findCategoryById(category_id));
+        }
+
         return "/product.xhtml?faces-redirect=true";
     }
 
