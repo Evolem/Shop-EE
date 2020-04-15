@@ -2,6 +2,7 @@ package ru.geekbrains.controllers;
 
 import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.persist.repositories.CategoryRepository;
+import ru.geekbrains.services.CategoryService;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -15,7 +16,7 @@ import java.util.List;
 public class CategoryController implements Serializable {
 
     @Inject
-    private CategoryRepository categoryRepository;
+    private CategoryService categoryService;
     private Category category;
 
     public Category getCategory() {
@@ -27,7 +28,7 @@ public class CategoryController implements Serializable {
     }
 
     public List<Category> getAllCategory() throws SQLException {
-        return categoryRepository.findAll();
+        return categoryService.findAll();
     }
 
     public String create(){
@@ -43,14 +44,14 @@ public class CategoryController implements Serializable {
 
     public String save() throws SQLException {
         if (category.getId() == null) {
-            categoryRepository.insert(category);
+            categoryService.insert(category);
         } else {
-            categoryRepository.update(category);
+            categoryService.update(category);
         }
         return "/category_all.xhtml?faces-redirect=true";
     }
 
     public void delete(Category category) throws SQLException {
-        categoryRepository.delete(category.getId());
+        categoryService.delete(category.getId());
     }
 }
