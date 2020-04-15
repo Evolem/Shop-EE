@@ -1,7 +1,7 @@
-package ru.geekbrains;
+package ru.geekbrains.controllers;
 
 import ru.geekbrains.persist.Product;
-import ru.geekbrains.persist.ProductRepository;
+import ru.geekbrains.persist.repositories.ProductRepository;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
