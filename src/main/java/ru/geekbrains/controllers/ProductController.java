@@ -3,6 +3,8 @@ package ru.geekbrains.controllers;
 import ru.geekbrains.persist.entities.Product;
 import ru.geekbrains.persist.repositories.CategoryRepository;
 import ru.geekbrains.persist.repositories.ProductRepository;
+import ru.geekbrains.services.CategoryService;
+import ru.geekbrains.services.ProductService;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -16,10 +18,10 @@ import java.util.List;
 public class ProductController implements Serializable {
 
     @Inject
-    private ProductRepository productService;
+    private ProductService productService;
 
     @Inject
-    private CategoryRepository categoryService;
+    private CategoryService categoryService;
 
     private Product product;
     private Integer category_id;
