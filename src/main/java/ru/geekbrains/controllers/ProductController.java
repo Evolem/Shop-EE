@@ -5,6 +5,7 @@ import ru.geekbrains.persist.repositories.CategoryRepository;
 import ru.geekbrains.persist.repositories.ProductRepository;
 import ru.geekbrains.services.CategoryService;
 import ru.geekbrains.services.ProductService;
+import ru.geekbrains.services.pojo.ProductPojo;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -23,6 +24,7 @@ public class ProductController implements Serializable {
     @Inject
     private CategoryService categoryService;
 
+    private ProductPojo productPojo;
     private Product product;
     private Integer category_id;
 
