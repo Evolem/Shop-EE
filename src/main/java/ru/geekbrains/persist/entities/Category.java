@@ -13,7 +13,6 @@ public class Category {
     private Integer id;
 
     @Column
-    @Size(min = 4, max = 30, message = " Поле должно содержать от 4 до 30 символов")
     private String name;
 
     @OneToMany(

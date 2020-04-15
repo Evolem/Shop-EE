@@ -2,8 +2,12 @@ package ru.geekbrains.services.pojo;
 
 import ru.geekbrains.persist.entities.Category;
 
+import javax.validation.constraints.Size;
+
 public class CategoryPojo {
     private Integer id;
+
+    @Size(min = 4, max = 30, message = " Поле должно содержать от 4 до 30 символов")
     private String name;
 
     public CategoryPojo() {
@@ -18,7 +22,7 @@ public class CategoryPojo {
         this(category.getId(), category.getName());
     }
 
-    public Category getCategory(){
+    public Category createCategory(){
         Category category = new Category();
         category.setId(id);
         category.setName(name);
