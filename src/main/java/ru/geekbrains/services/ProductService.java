@@ -2,7 +2,7 @@ package ru.geekbrains.services;
 
 import ru.geekbrains.persist.entities.Product;
 import ru.geekbrains.persist.repositories.ProductRepository;
-import ru.geekbrains.services.pojo.ProductPojo;
+import ru.geekbrains.pojo.ProductPojo;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

@@ -5,7 +5,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:include src="WEB-INF/head.xhtml">
-    <ui:param name="pageHeader" value="Product list"/>
+    <ui:param name="pageHeader" value="Product"/>
 </ui:include>
 
 <h:body>
@@ -14,55 +14,49 @@
 
     <div class="container">
         <div class="row py-2">
-            <h:form id="productForm">
-                <div class="col-12">
-                    <h:commandButton value="Add product" styleClass="btn btn-primary"
-                                     action="#{productController.createProduct}"/>
-                </div>
-
-                <div class="col-12">
-                    <h:dataTable value="#{productController.allProduct}" var="p"
+            <div class="col-12">
+                <h:form id="productForm">
+                    <div class="col-12">
+                    <h:dataTable value="#{cartController.allLineItems}" var="line"
                                  styleClass="table table-bordered my-2">
                         <h:column>
                             <f:facet name="header">Id</f:facet>
-                            #{p.id}
+                            #{line.productPojo.id}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Name</f:facet>
-                            #{p.name}
+                            #{line.productPojo.name}
                         </h:column>
-                        <h:column>
-                            <f:facet name="header">Description</f:facet>
-                            #{p.description}
-                        </h:column>
+
                         <h:column>
                             <f:facet name="header">Price</f:facet>
-                            #{p.price}
+                            #{line.productPojo.price}
                         </h:column>
+
                         <h:column>
-                            <f:facet name="header">Category</f:facet>
-                            #{p.categoryPojo.name}
+                            <f:facet name="header">Количество</f:facet>
+                            #{line.qty}
                         </h:column>
+
                         <h:column>
-                            <f:facet name="header">Action</f:facet>
-                            <h:commandButton value="Edit" action="#{productController.editProduct(p)}"
-                                             styleClass="btn btn-success mr-1"/>
-                            <h:commandButton value="Delete" action="#{productController.deleteProduct(p)}"
-                                             styleClass="btn btn-danger mr-1">
+                            <f:facet name="header">Сумма</f:facet>
+                            #{line.productPojo.price * line.qty}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Удалить?</f:facet>
+                            <h:commandButton value="Delete" action="#{cartController.removeFromCart(line.productPojo)}"
+                                             styleClass="btn btn-danger">
                                 <f:ajax event="click" render="productForm"/>
                             </h:commandButton>
-
-                            <h:commandButton value="to cart" action="#{cartController.addToCart(p)}"
-                                             styleClass="btn btn-success mr-1">
-                                <f:ajax event="click" render="productForm"/>
-                            </h:commandButton>
-
                         </h:column>
                     </h:dataTable>
-                </div>
-            </h:form>
+                    </div>
+                </h:form>
+            </div>
         </div>
     </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -75,5 +69,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
 </h:body>
 </html>

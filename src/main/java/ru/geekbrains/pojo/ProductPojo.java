@@ -1,8 +1,9 @@
-package ru.geekbrains.services.pojo;
+package ru.geekbrains.pojo;
 
 import ru.geekbrains.persist.entities.Product;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class ProductPojo {
 
@@ -74,5 +75,18 @@ public class ProductPojo {
 
     public void setCategoryPojo(CategoryPojo categoryPojo) {
         this.categoryPojo = categoryPojo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductPojo that = (ProductPojo) o;
+        return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

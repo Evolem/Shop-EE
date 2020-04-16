@@ -1,17 +1,13 @@
 package ru.geekbrains.controllers;
 
-import ru.geekbrains.persist.entities.Product;
-import ru.geekbrains.persist.repositories.CategoryRepository;
-import ru.geekbrains.persist.repositories.ProductRepository;
 import ru.geekbrains.services.CategoryService;
 import ru.geekbrains.services.ProductService;
-import ru.geekbrains.services.pojo.ProductPojo;
+import ru.geekbrains.pojo.ProductPojo;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 @SessionScoped

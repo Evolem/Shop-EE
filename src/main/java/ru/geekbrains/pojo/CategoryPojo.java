@@ -1,4 +1,4 @@
-package ru.geekbrains.services.pojo;
+package ru.geekbrains.pojo;
 
 import ru.geekbrains.persist.entities.Category;
 
