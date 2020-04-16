@@ -21,33 +21,33 @@
                 </div>
 
                 <div class="col-12">
-                    <h:dataTable value="#{productController.allProduct}" var="product"
+                    <h:dataTable value="#{productController.allProduct}" var="p"
                                  styleClass="table table-bordered my-2">
                         <h:column>
                             <f:facet name="header">Id</f:facet>
-                            #{product.id}
+                            #{p.id}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Name</f:facet>
-                            #{product.name}
+                            #{p.name}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Description</f:facet>
-                            #{product.description}
+                            #{p.description}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Price</f:facet>
-                            #{product.price}
+                            #{p.price}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Category</f:facet>
-                            #{product.category.name}
+                            #{p.categoryPojo.name}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Action</f:facet>
-                            <h:commandButton value="Edit" action="#{productController.editProduct(product)}"
+                            <h:commandButton value="Edit" action="#{productController.editProduct(p)}"
                                              styleClass="btn btn-success mr-1"/>
-                            <h:commandButton value="Delete" action="#{productController.deleteProduct(product)}"
+                            <h:commandButton value="Delete" action="#{productController.deleteProduct(p)}"
                                              styleClass="btn btn-danger">
                                 <f:ajax event="click" render="productForm"/>
                             </h:commandButton>

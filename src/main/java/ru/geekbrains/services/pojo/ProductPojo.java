@@ -20,7 +20,20 @@ public class ProductPojo {
         this.name = product.getName();
         this.description = product.getDescription();
         this.price = product.getPrice();
-        this.categoryPojo = new CategoryPojo(product.getCategory());
+        if (product.getCategory() != null) {
+            this.categoryPojo = new CategoryPojo(product.getCategory());
+        }
+    }
+
+    public Product createProduct() {
+        Product product = new Product();
+        product.setName(name);
+        if (categoryPojo != null) {
+            product.setCategory(categoryPojo.createCategory());
+        }
+        product.setDescription(description);
+        product.setPrice(price);
+        return product;
     }
 
     public Long getId() {

@@ -11,7 +11,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 @SessionScoped
@@ -20,12 +19,10 @@ public class CategoryController implements Serializable {
 
     Logger logger = LoggerFactory.getLogger("Category Controller");
 
-
     @Inject
     private CategoryService categoryService;
 
     private CategoryPojo categoryPojo;
-    private Category category;
 
     public CategoryPojo getCategoryPojo() {
         return categoryPojo;
@@ -35,13 +32,6 @@ public class CategoryController implements Serializable {
         this.categoryPojo = categoryPojo;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 
     public List<CategoryPojo> getAllCategory() {
         return categoryService.findAll();
@@ -69,7 +59,7 @@ public class CategoryController implements Serializable {
         return "/category_all.xhtml?faces-redirect=true";
     }
 
-    public void delete(CategoryPojo categoryPojo) throws SQLException {
+    public void delete(CategoryPojo categoryPojo) {
         categoryService.delete(categoryPojo.getId());
     }
 }

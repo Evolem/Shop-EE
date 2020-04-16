@@ -25,11 +25,14 @@ public class ProductController implements Serializable {
     private CategoryService categoryService;
 
     private ProductPojo productPojo;
-    private Product product;
     private Integer category_id;
 
-    public Product getProduct() {
-        return product;
+    public ProductPojo getProductPojo() {
+        return productPojo;
+    }
+
+    public void setProductPojo(ProductPojo productPojo) {
+        this.productPojo = productPojo;
     }
 
     public Integer getCategory_id() {
@@ -40,42 +43,37 @@ public class ProductController implements Serializable {
         this.category_id = category_id;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     public String createProduct() {
-        this.product = new Product();
+        this.productPojo = new ProductPojo();
         if (category_id != null) {
-            this.product.setCategory(categoryService.findCategoryById(category_id));
+            this.productPojo.setCategoryPojo(categoryService.findCategoryById(category_id));
         }
         return "/product.xhtml?faces-redirect=true";
     }
 
-    public List<Product> getAllProduct() throws SQLException {
+    public List<ProductPojo> getAllProduct(){
         return productService.findAll();
     }
 
-    public String editProduct(Product product) {
-        this.product = product;
-
+    public String editProduct(ProductPojo product) {
+        this.productPojo = product;
         if (category_id != null) {
-            this.product.setCategory(categoryService.findCategoryById(category_id));
+            this.productPojo.setCategoryPojo(categoryService.findCategoryById(category_id));
         }
 
         return "/product.xhtml?faces-redirect=true";
     }
 
-    public void deleteProduct(Product product) throws SQLException {
+    public void deleteProduct(ProductPojo product) {
         productService.delete(product.getId());
         //return "/index.xhtml?faces-redirect=true";
     }
 
-    public String saveProduct() throws SQLException {
-        if (product.getId() == null) {
-            productService.insert(product);
+    public String saveProduct() {
+        if (productPojo.getId() == null) {
+            productService.insert(productPojo);
         } else {
-            productService.update(product);
+            productService.update(productPojo);
         }
         return "/index.xhtml?faces-redirect=true";
     }

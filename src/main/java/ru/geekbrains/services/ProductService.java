@@ -2,12 +2,14 @@ package ru.geekbrains.services;
 
 import ru.geekbrains.persist.entities.Product;
 import ru.geekbrains.persist.repositories.ProductRepository;
+import ru.geekbrains.services.pojo.ProductPojo;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Named
 @ApplicationScoped
@@ -17,23 +19,27 @@ public class ProductService {
     ProductRepository productRepository;
 
     @Transactional
-    public void insert(Product product){
+    public void insert(ProductPojo productPojo){
+        Product product = productPojo.createProduct();
         productRepository.insert(product);
     }
 
     @Transactional
-    public void update(Product product){
+    public void update(ProductPojo productPojo){
+        Product product = productPojo.createProduct();
         productRepository.update(product);
     }
 
     @Transactional
-    public Product findById(long id){
-        return productRepository.findById(id);
+    public ProductPojo findById(long id){
+        return new ProductPojo(productRepository.findById(id));
     }
 
     @Transactional
-    public List<Product> findAll(){
-        return productRepository.findAll();
+    public List<ProductPojo> findAll(){
+        return productRepository.findAll().stream()
+                .map(ProductPojo::new)
+                .collect(Collectors.toList());
     }
 
     public void delete(Long id) {
