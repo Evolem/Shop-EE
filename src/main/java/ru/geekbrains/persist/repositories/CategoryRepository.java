@@ -36,7 +36,7 @@ public class CategoryRepository {
         em.merge(category);
     }
 
-    public Category findCategoryById(int category_id) {
-        return em.find(Category.class, category_id);
+    public Category findCategoryById(int category) {
+        return em.find(Category.class, category);
     }
 }

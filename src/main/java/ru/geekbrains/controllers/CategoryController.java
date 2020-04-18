@@ -2,6 +2,7 @@ package ru.geekbrains.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.services.CategoryService;
 import ru.geekbrains.pojo.CategoryPojo;
 
@@ -33,6 +34,10 @@ public class CategoryController implements Serializable {
 
     public List<CategoryPojo> getAllCategory() {
         return categoryService.findAll();
+    }
+
+    public CategoryPojo findById(Integer id){
+       return categoryService.findCategoryById(id);
     }
 
     public String create() {

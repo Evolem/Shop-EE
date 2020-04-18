@@ -16,9 +16,9 @@ public class Category {
     private String name;
 
     @OneToMany(
-            mappedBy = "category", //сущность по которой идет связь
-            cascade = CascadeType.ALL,
-            orphanRemoval = true //продукт без категории будет удален
+            mappedBy = "category" //сущность по которой идет связь
+         //   cascade = CascadeType.ALL
+         //   orphanRemoval = true //продукт без категории будет удален
     )
     private List<Product> products;
 
@@ -50,4 +50,7 @@ public class Category {
         return products;
     }
 
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 }

@@ -1,6 +1,8 @@
 package ru.geekbrains.services;
 
+import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.persist.entities.Product;
+import ru.geekbrains.persist.repositories.CategoryRepository;
 import ru.geekbrains.persist.repositories.ProductRepository;
 import ru.geekbrains.pojo.ProductPojo;
 
@@ -18,15 +20,32 @@ public class ProductService {
     @Inject
     ProductRepository productRepository;
 
+    @Inject
+    CategoryRepository categoryRepository;
+
     @Transactional
     public void insert(ProductPojo productPojo){
-        Product product = productPojo.createProduct();
+        Category category = categoryRepository.findCategoryById(productPojo.getCategory_id());
+        Product product = new Product();
+
+        product.setName(productPojo.getName());
+        product.setDescription(productPojo.getDescription());
+        product.setPrice(productPojo.getPrice());
+        product.setCategory(category);
+
         productRepository.insert(product);
     }
 
     @Transactional
     public void update(ProductPojo productPojo){
-        Product product = productPojo.createProduct();
+        Category category = categoryRepository.findCategoryById(productPojo.getCategory_id());
+        Product product = productRepository.findById(productPojo.getId());
+
+        product.setName(productPojo.getName());
+        product.setPrice(productPojo.getPrice());
+        product.setDescription(productPojo.getDescription());
+        product.setCategory(category);
+
         productRepository.update(product);
     }
 

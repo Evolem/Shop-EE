@@ -1,6 +1,7 @@
 package ru.geekbrains.controllers;
 
 import ru.geekbrains.services.CategoryService;
+import ru.geekbrains.services.OrderService;
 import ru.geekbrains.services.ProductService;
 import ru.geekbrains.pojo.ProductPojo;
 
@@ -20,8 +21,10 @@ public class ProductController implements Serializable {
     @Inject
     private CategoryService categoryService;
 
+    @Inject
+    private OrderService orderService;
+
     private ProductPojo productPojo;
-    private Integer category_id;
 
     public ProductPojo getProductPojo() {
         return productPojo;
@@ -31,19 +34,8 @@ public class ProductController implements Serializable {
         this.productPojo = productPojo;
     }
 
-    public Integer getCategory_id() {
-        return category_id;
-    }
-
-    public void setCategory_id(Integer category_id) {
-        this.category_id = category_id;
-    }
-
     public String createProduct() {
         this.productPojo = new ProductPojo();
-        if (category_id != null) {
-            this.productPojo.setCategoryPojo(categoryService.findCategoryById(category_id));
-        }
         return "/product.xhtml?faces-redirect=true";
     }
 
@@ -53,10 +45,6 @@ public class ProductController implements Serializable {
 
     public String editProduct(ProductPojo product) {
         this.productPojo = product;
-        if (category_id != null) {
-            this.productPojo.setCategoryPojo(categoryService.findCategoryById(category_id));
-        }
-
         return "/product.xhtml?faces-redirect=true";
     }
 
@@ -73,4 +61,5 @@ public class ProductController implements Serializable {
         }
         return "/index.xhtml?faces-redirect=true";
     }
+
 }

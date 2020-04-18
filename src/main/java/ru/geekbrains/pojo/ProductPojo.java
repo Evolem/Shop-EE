@@ -2,6 +2,7 @@ package ru.geekbrains.pojo;
 
 import ru.geekbrains.persist.entities.Product;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -11,7 +12,8 @@ public class ProductPojo {
     private String name;
     private String description;
     private BigDecimal price;
-    private CategoryPojo categoryPojo;
+    @NotNull
+    private Integer category_id;
 
     public ProductPojo() {
     }
@@ -21,21 +23,9 @@ public class ProductPojo {
         this.name = product.getName();
         this.description = product.getDescription();
         this.price = product.getPrice();
-        if (product.getCategory() != null) {
-            this.categoryPojo = new CategoryPojo(product.getCategory());
-        }
+        this.category_id = product.getCategory().getId();
     }
 
-    public Product createProduct() {
-        Product product = new Product();
-        product.setName(name);
-        if (categoryPojo != null) {
-            product.setCategory(categoryPojo.createCategory());
-        }
-        product.setDescription(description);
-        product.setPrice(price);
-        return product;
-    }
 
     public Long getId() {
         return id;
@@ -69,12 +59,12 @@ public class ProductPojo {
         this.price = price;
     }
 
-    public CategoryPojo getCategoryPojo() {
-        return categoryPojo;
+    public Integer getCategory_id() {
+        return category_id;
     }
 
-    public void setCategoryPojo(CategoryPojo categoryPojo) {
-        this.categoryPojo = categoryPojo;
+    public void setCategory_id(Integer category_id) {
+        this.category_id = category_id;
     }
 
     @Override

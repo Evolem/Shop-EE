@@ -50,7 +50,16 @@
                                 <f:ajax event="click" render="productForm"/>
                             </h:commandButton>
                         </h:column>
+
                     </h:dataTable>
+
+                        <h:outputLabel>
+                            <b>ИТОГО:</b> #{cartController.sum}
+                        </h:outputLabel>
+
+                        <h:commandButton value="Create Order" styleClass="btn btn-primary"
+                                         action="#{cartController.createOrder}"/>
+
                     </div>
                 </h:form>
             </div>

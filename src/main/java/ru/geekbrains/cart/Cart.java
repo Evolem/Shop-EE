@@ -40,4 +40,8 @@ public class Cart implements Serializable {
         lineItems.forEach(LineItem::setQty);
         return new ArrayList<>(lineItems.keySet());
     }
+
+    public void cleaner(){
+        lineItems.clear();
+    }
 }

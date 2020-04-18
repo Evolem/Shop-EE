@@ -39,8 +39,8 @@ public class CategoryService {
     }
 
     @Transactional
-    public CategoryPojo findCategoryById(int category_id){
-      return new CategoryPojo(categoryRepository.findCategoryById(category_id));
+    public CategoryPojo findCategoryById(int id){
+      return new CategoryPojo(categoryRepository.findCategoryById(id));
     }
 
     @Transactional
