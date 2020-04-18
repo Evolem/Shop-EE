@@ -8,6 +8,10 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.*;
 import java.sql.*;
 import java.util.List;
@@ -52,4 +56,16 @@ public class ProductRepository {
         return em.createQuery("from Product", Product.class).getResultList();
     }
 
+
+    //SELECT p FROM Product p | Criteria API
+    public List<Product> selectAllProducts() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Product> query = cb.createQuery(Product.class); //тип возвращаемого значения.
+        Root<Product> c = query.from(Product.class);
+        query.select(c);
+
+        TypedQuery<Product> q = em.createQuery(query);
+        List<Product> products = q.getResultList();
+        return products;
+    }
 }
