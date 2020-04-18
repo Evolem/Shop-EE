@@ -56,6 +56,10 @@ public class ProductRepository {
         return em.createQuery("from Product", Product.class).getResultList();
     }
 
+    public List<Product> findAllByCategoryId(Integer id){
+        return em.createQuery("from Product where category.id = :id").setParameter("id",id).getResultList();
+    }
+
 
     //SELECT p FROM Product p | Criteria API
     public List<Product> selectAllProducts() {

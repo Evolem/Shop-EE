@@ -25,6 +25,7 @@ public class ProductController implements Serializable {
     private OrderService orderService;
 
     private ProductPojo productPojo;
+    private Integer category_id = -1;
 
     public ProductPojo getProductPojo() {
         return productPojo;
@@ -40,7 +41,12 @@ public class ProductController implements Serializable {
     }
 
     public List<ProductPojo> getAllProduct(){
-        return productService.findAll();
+        if(category_id == -1) return productService.findAll();
+        else  return productService.findAllByCategoryId(category_id);
+    }
+
+    public String refresh(){
+        return "/index.xhtml?faces-redirect=true";
     }
 
     public String editProduct(ProductPojo product) {
@@ -62,4 +68,11 @@ public class ProductController implements Serializable {
         return "/index.xhtml?faces-redirect=true";
     }
 
+    public Integer getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(Integer category_id) {
+        this.category_id = category_id;
+    }
 }

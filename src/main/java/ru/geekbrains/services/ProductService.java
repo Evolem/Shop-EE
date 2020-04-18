@@ -61,6 +61,13 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
+    public List<ProductPojo> findAllByCategoryId(Integer id){
+       return productRepository.findAllByCategoryId(id)
+               .stream()
+               .map(ProductPojo::new)
+               .collect(Collectors.toList());
+    }
+
     public void delete(Long id) {
         productRepository.delete(id);
     }

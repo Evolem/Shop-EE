@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-12">
-                    <h:dataTable value="#{productController.allProduct}" var="p"
+                    <h:dataTable value="#{productController.getAllProduct()}" var="p"
                                  styleClass="table table-bordered my-2">
                         <h:column>
                             <f:facet name="header">Id</f:facet>
@@ -44,6 +44,7 @@
                             #{categoryController.findById(p.category_id).name}
                         </h:column>
                         <h:column>
+
                             <f:facet name="header">Action</f:facet>
                             <h:commandButton value="Edit" action="#{productController.editProduct(p)}"
                                              styleClass="btn btn-success mr-1"/>
@@ -59,6 +60,17 @@
 
                         </h:column>
                     </h:dataTable>
+
+                    <h:outputLabel value="Category" for="category"/>
+                    <h:selectOneMenu styleClass="form-control"  id="category" value="#{productController.category_id}">
+                        <f:selectItem  itemLabel="All Category" itemValue="-1"/>
+                        <f:selectItems value="#{categoryController.allCategory}" var="c" itemLabel="#{c.name}" itemValue="#{c.id}"  />
+                    </h:selectOneMenu>
+
+                    <h:commandButton value="Apply" action="#{productController.refresh}"
+                                     styleClass="btn btn-success mr-1">
+                    </h:commandButton>
+
                 </div>
             </h:form>
         </div>
