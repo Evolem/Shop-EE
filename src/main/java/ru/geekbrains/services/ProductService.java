@@ -4,8 +4,10 @@ import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.persist.entities.Product;
 import ru.geekbrains.persist.repositories.CategoryRepository;
 import ru.geekbrains.persist.repositories.ProductRepository;
+import ru.geekbrains.persist.repositories.ejbRepositories.ProductRepo;
 import ru.geekbrains.pojo.ProductPojo;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -17,8 +19,8 @@ import java.util.stream.Collectors;
 @ApplicationScoped
 public class ProductService {
 
-    @Inject
-    ProductRepository productRepository;
+    @EJB
+    ProductRepo productRepository;
 
     @Inject
     CategoryRepository categoryRepository;

@@ -2,8 +2,10 @@ package ru.geekbrains.services;
 
 import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.persist.repositories.CategoryRepository;
+import ru.geekbrains.persist.repositories.ejbRepositories.CategoryRepo;
 import ru.geekbrains.pojo.CategoryPojo;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,8 +18,8 @@ import java.util.stream.Collectors;
 @ApplicationScoped
 public class CategoryService {
 
-    @Inject
-    CategoryRepository categoryRepository;
+    @EJB
+    CategoryRepo categoryRepository;
 
     @Transactional
     public List<CategoryPojo> findAll() {

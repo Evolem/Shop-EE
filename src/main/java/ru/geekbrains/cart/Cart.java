@@ -3,6 +3,7 @@ package ru.geekbrains.cart;
 import ru.geekbrains.cart.LineItem;
 import ru.geekbrains.pojo.ProductPojo;
 
+import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -11,8 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SessionScoped
-@Named
+@Stateful
 public class Cart implements Serializable {
     private Map<LineItem, Integer> lineItems;
 

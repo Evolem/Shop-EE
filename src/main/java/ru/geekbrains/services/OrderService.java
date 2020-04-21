@@ -3,7 +3,9 @@ package ru.geekbrains.services;
 import ru.geekbrains.cart.LineItem;
 import ru.geekbrains.persist.entities.Order;
 import ru.geekbrains.persist.repositories.OrderRepository;
+import ru.geekbrains.persist.repositories.ejbRepositories.OrderRepo;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,8 +17,8 @@ import java.util.List;
 @Named
 public class OrderService {
 
-    @Inject
-    OrderRepository orderRepository;
+    @EJB
+    OrderRepo orderRepository;
 
     @Transactional
     public List<Order> findAllOrder(){

@@ -5,6 +5,7 @@ import ru.geekbrains.cart.LineItem;
 import ru.geekbrains.pojo.ProductPojo;
 import ru.geekbrains.services.OrderService;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,7 +17,7 @@ import java.util.List;
 @SessionScoped
 public class CartController implements Serializable {
 
-    @Inject
+    @EJB
     private Cart cart;
 
     @Inject
