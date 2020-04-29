@@ -8,16 +8,18 @@ import ru.geekbrains.persist.repositories.ejbRepositories.ProductRepo;
 import ru.geekbrains.pojo.ProductPojo;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.jws.WebService;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Named
 @ApplicationScoped
-public class ProductService {
+@WebService(endpointInterface = "ru.geekbrains.services.ProductServiceWs", serviceName = "ProductService")
+public class ProductService implements ProductServiceWs {
 
     @EJB
     ProductRepo productRepository;
@@ -26,7 +28,8 @@ public class ProductService {
     CategoryRepository categoryRepository;
 
     @Transactional
-    public void insert(ProductPojo productPojo){
+    @Override
+    public void insertProduct(ProductPojo productPojo){
         Category category = categoryRepository.findCategoryById(productPojo.getCategory_id());
         Product product = new Product();
 
@@ -39,6 +42,7 @@ public class ProductService {
     }
 
     @Transactional
+    @Override
     public void update(ProductPojo productPojo){
         Category category = categoryRepository.findCategoryById(productPojo.getCategory_id());
         Product product = productRepository.findById(productPojo.getId());
@@ -52,17 +56,20 @@ public class ProductService {
     }
 
     @Transactional
+    @Override
     public ProductPojo findById(long id){
         return new ProductPojo(productRepository.findById(id));
     }
 
     @Transactional
+    @Override
     public List<ProductPojo> findAll(){
         return productRepository.findAll().stream()
                 .map(ProductPojo::new)
                 .collect(Collectors.toList());
     }
 
+    @Override
     public List<ProductPojo> findAllByCategoryId(Integer id){
        return productRepository.findAllByCategoryId(id)
                .stream()
@@ -70,7 +77,15 @@ public class ProductService {
                .collect(Collectors.toList());
     }
 
+    @Transactional
+    @Override
     public void delete(Long id) {
         productRepository.delete(id);
+    }
+
+    @Override
+    @Transactional
+    public ProductPojo findProductByName(String name) {
+        return new ProductPojo(productRepository.findProductByName(name));
     }
 }

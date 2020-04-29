@@ -61,7 +61,7 @@ public class ProductController implements Serializable {
 
     public String saveProduct() {
         if (productPojo.getId() == null) {
-            productService.insert(productPojo);
+            productService.insertProduct(productPojo);
         } else {
             productService.update(productPojo);
         }

@@ -9,6 +9,8 @@ import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +18,8 @@ import java.util.stream.Collectors;
 
 @Named
 @ApplicationScoped
-public class CategoryService {
+@WebService(endpointInterface = "ru.geekbrains.services.CategoryServiceWs", serviceName = "CategoryService")
+public class CategoryService implements CategoryServiceWs {
 
     @EJB
     CategoryRepo categoryRepository;
@@ -29,7 +32,7 @@ public class CategoryService {
     }
 
     @Transactional
-    public void insert(CategoryPojo categoryPojo){
+    public void insertCategory(CategoryPojo categoryPojo){
         categoryRepository.insert(categoryPojo.createCategory());
     }
 

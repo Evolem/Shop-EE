@@ -2,7 +2,6 @@ package ru.geekbrains.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.geekbrains.persist.entities.Category;
 import ru.geekbrains.services.CategoryService;
 import ru.geekbrains.pojo.CategoryPojo;
 
@@ -54,7 +53,7 @@ public class CategoryController implements Serializable {
     public String save() {
         if (categoryPojo.getId() == null) {
             logger.warn("ID = NULL, CREATE ENTRY");
-            categoryService.insert(categoryPojo);
+            categoryService.insertCategory(categoryPojo);
         } else {
             logger.warn("ID =" + categoryPojo.getId() + ", UPDATE ENTRY");
             categoryService.update(categoryPojo);

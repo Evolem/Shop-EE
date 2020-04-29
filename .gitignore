@@ -20,6 +20,7 @@ build/
 *.iml
 *.ipr
 out/
+/web-client/soap-client/target/**
 
 ### NetBeans ###
 /nbproject/private/
@@ -33,3 +34,12 @@ out/
 /src/main/resources/db/migration/
 /storage/
 /target/
+!/web-client/out/
+*.class
+web-client/out/production/soap-client/META-INF/
+web-client/soap-client/src/main/resources/
+web-client/soap-client/src/test/
+web-client/soap-client/target/generated-sources/annotations/
+web-client/src/
+*.lst
+*.lst

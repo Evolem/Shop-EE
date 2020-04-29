@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 
 @Table(name = "products")
 @Entity
+@NamedQuery(name = "ProductFindByName", query = "SELECT p from Product p WHERE  p.name = :name")
 public class Product {
 
     @Id

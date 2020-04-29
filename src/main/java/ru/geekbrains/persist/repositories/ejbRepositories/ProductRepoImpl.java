@@ -62,6 +62,10 @@ public class ProductRepoImpl implements ProductRepo {
         return em.createQuery("from Product where category.id = :id").setParameter("id", id).getResultList();
     }
 
+    @Override
+    public Product findProductByName(String name) {
+        return em.createNamedQuery("ProductFindByName", Product.class).setParameter("name", name).getSingleResult();
+    }
 
 
 }

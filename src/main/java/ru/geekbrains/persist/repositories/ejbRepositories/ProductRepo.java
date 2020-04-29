@@ -19,4 +19,6 @@ public interface ProductRepo {
      List<Product> findAll() ;
 
      List<Product> findAllByCategoryId(Integer id);
+
+     Product findProductByName(String name);
 }
