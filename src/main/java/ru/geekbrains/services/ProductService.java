@@ -6,6 +6,7 @@ import ru.geekbrains.persist.repositories.CategoryRepository;
 import ru.geekbrains.persist.repositories.ProductRepository;
 import ru.geekbrains.persist.repositories.ejbRepositories.ProductRepo;
 import ru.geekbrains.pojo.ProductPojo;
+import ru.geekbrains.rest.ProductServiceRs;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -19,7 +20,7 @@ import java.util.stream.Collectors;
 
 @ApplicationScoped
 @WebService(endpointInterface = "ru.geekbrains.services.ProductServiceWs", serviceName = "ProductService")
-public class ProductService implements ProductServiceWs {
+public class ProductService implements ProductServiceWs, ProductServiceRs {
 
     @EJB
     ProductRepo productRepository;
