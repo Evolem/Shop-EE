@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
-@WebService(endpointInterface = "ru.geekbrains.services.ProductServiceWs", serviceName = "ProductService")
+//@WebService(endpointInterface = "ru.geekbrains.services.ProductServiceWs", serviceName = "ProductService")
 public class ProductService implements ProductServiceWs, ProductServiceRs {
 
     @EJB
