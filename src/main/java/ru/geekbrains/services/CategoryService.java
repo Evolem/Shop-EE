@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @Named
 @ApplicationScoped
-@WebService(endpointInterface = "ru.geekbrains.services.CategoryServiceWs", serviceName = "CategoryService")
+//@WebService(endpointInterface = "ru.geekbrains.services.CategoryServiceWs", serviceName = "CategoryService")
 public class CategoryService implements CategoryServiceWs {
 
     @EJB
