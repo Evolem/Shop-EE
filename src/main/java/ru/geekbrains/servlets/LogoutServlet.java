@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/logout")
-@ServletSecurity(@HttpConstraint(rolesAllowed = { "GUEST", "ADMIN" }))
+@ServletSecurity(@HttpConstraint(rolesAllowed = {"GUEST"}))
 public class LogoutServlet extends HttpServlet {
 
         @Override
